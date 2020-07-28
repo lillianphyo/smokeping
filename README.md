@@ -11,9 +11,10 @@ SmokePing keeps track of your network latency:
 
 # to use docker file   
 - docker build . --network=host   
+- docker image tag IMGAGE_ID name:version
 
 # to run docker   
-- docker run -tdi --name smokeping -v /opt/smokeping:/opt/smokeping -p 80:80 docker.pkg.github.com/lillianphyoe/smokeping/smokeping:2.7
+- docker run -tdi --name smokeping -v /opt/smokeping:/opt/smokeping --restart unless-stopped -e TZ=Asia/Yangon -p 80:80 docker.pkg.github.com/lillianphyoe/smokeping/smokeping:2.7
 
 # hint   
 can change config file under /opt/smokeping/etc/config to add network device to monitor.
